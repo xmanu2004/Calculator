@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Pin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pin.css">
+</head>
+<body>
+    <div class="pin-container">
+        <div class="pin-heading">
+            <span>Create Your Account</span>
+        </div>
+        <!-- Username Input Field -->
+        <div class="username-box">
+            <input type="text" id="usernameInput" placeholder="Enter Username" maxlength="20" />
+        </div>
+
+        <div class="pin-box">
+            <div class="input-box">
+                <input type="text" id="pinInput" disabled placeholder="Enter 4-Digit Pin" />
+            </div>
+            <div class="buttons">
+                <button class="num-btn" onclick="appendNumber(1)">1</button>
+                <button class="num-btn" onclick="appendNumber(2)">2</button>
+                <button class="num-btn" onclick="appendNumber(3)">3</button>
+                <button class="num-btn" onclick="appendNumber(4)">4</button>
+                <button class="num-btn" onclick="appendNumber(5)">5</button>
+                <button class="num-btn" onclick="appendNumber(6)">6</button>
+                <button class="num-btn" onclick="appendNumber(7)">7</button>
+                <button class="num-btn" onclick="appendNumber(8)">8</button>
+                <button class="num-btn" onclick="appendNumber(9)">9</button>
+                <button class="num-btn" onclick="appendNumber(0)">0</button>
+                <button class="minus-btn" onclick="clearInput()">-</button>
+                <button class="submit-btn" onclick="submitPin()">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal HTML (Hidden by default) -->
+    <div id="modal-success" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-success')">×</span>
+            <h2>Account Successfully Created!</h2>
+            
+        </div>
+    </div>
+
+    <!-- Username Error Modal HTML (Hidden by default) -->
+    <div id="modal-username" class="modal">
+        <div class="modal-content error">
+            <span class="close-btn" onclick="closeModal('modal-username')">×</span>
+            <h2>Error</h2>
+            <p>Please enter a username.</p>
+        </div>
+    </div>
+
+    <!-- Pin Error Modal HTML (Hidden by default) -->
+    <div id="modal-pin" class="modal">
+        <div class="modal-content error">
+            <span class="close-btn" onclick="closeModal('modal-pin')">×</span>
+            <h2>Error</h2>
+            <p>Please enter a 4-digit PIN.</p>
+        </div>
+    </div>
+
+    <script src="pin.js"></script>
+</body>
+</html>

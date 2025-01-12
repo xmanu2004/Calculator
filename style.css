@@ -1,0 +1,218 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #333;
+}
+
+/* Calculator Container */
+.calculator {
+    background-color: #1C1C1C;
+    border-radius: 40px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    height: 600px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 60px;
+    margin-top: -20px; /* Move the container upwards */
+}
+
+
+/* Heading */
+.heading {
+    font-size: 28px; /* Font size */
+    font-weight: 300;  /* Lighter font weight (thin) */
+    color: #b8b8b8; /* Blended color (black and white mix) */
+    text-align: center;
+    margin-top: 25px; /* Adjusted margin-top to move the heading down a bit */
+    margin-bottom: 30px; /* Space between heading and the calculator body */
+    text-transform: uppercase; /* Capitalize all letters */
+    font-family: 'Roboto', sans-serif; /* Updated font */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Display Section */
+.display {
+    margin-bottom: 20px;
+}
+
+#display {
+    width: 100%;
+    height: 80px;  /* Default height for the display */
+    font-size: 40px;  /* Font size for the display */
+    color: white;
+    background-color: #222;
+    border: none;
+    border-radius: 15px;
+    text-align: right;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* Button Row Layout */
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap;  /* Allow buttons to wrap on smaller screens */
+}
+
+.button-row button {
+    width: 80px;  /* Button width */
+    height: 80px;  /* Button height */
+    font-size: 32px;  /* Font size */
+    border: none;
+    border-radius: 50%;  /* Circular buttons */
+    cursor: pointer;
+    color: #fff;
+    background-color: #333;  /* Default background color */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #444;
+    transform: translateY(-3px);
+}
+
+button:active {
+    background-color: #555;
+    transform: translateY(1px);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Light grey circular background for specific buttons (always light grey) */
+.ac,
+.light-grey {
+    background-color: #808080; /* Light grey circular background */
+    color: black;  /* Font color black */
+}
+
+/* Special Buttons (Operators, Equal) */
+.operator {
+    background-color: #ff9500;  /* iOS orange operator color */
+}
+
+.operator:hover {
+    background-color: #e88a00;
+}
+
+.equal {
+    background-color: #4cd964;  /* iOS green equal button */
+}
+
+.equal:hover {
+    background-color: #45c357;
+}
+
+/* Zero Button Styling */
+.zero {
+    width: 170px;  /* 0 button spans 2 columns */
+}
+
+/* Button Animation Effects */
+@keyframes buttonPop {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button {
+    animation: buttonPop 0.2s ease-out;
+}
+
+/* Footer - Developed by Manusha */
+.footer {
+    font-size: 16px;
+    color: #808080; /* Light grey color */
+    text-align: center;
+    position: absolute;
+    bottom: 20px; /* Moved higher to 30px from the bottom */
+    width: 100%;
+    opacity: 0;
+    animation: footerAnimation 2s ease-in-out forwards;
+}
+
+/* Footer Text Animation */
+@keyframes footerAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .button-row button {
+        font-size: 28px;
+        width: 70px;
+        height: 70px;
+    }
+
+    #display {
+        font-size: 36px;
+        height: 90px;
+    }
+
+    .zero {
+        width: 140px;
+    }
+
+    .calculator {
+        height: 700px;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        padding: 10px;
+        width: 100%;
+        max-width: 90%;
+        height: 720px;
+    }
+
+    #display {
+        font-size: 32px;
+        height: 100px;
+    }
+
+    .button-row button {
+        font-size: 26px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .zero {
+        width: 150px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}

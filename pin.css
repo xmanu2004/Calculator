@@ -1,0 +1,251 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #00FF00;
+    flex-direction: column;
+}
+
+/* Pin Container */
+.pin-container {
+    background-color: #111;
+    padding: 0px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    height: 65vh;
+    margin-top: -62px;
+}
+
+/* Heading */
+.pin-heading span {
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #00FF00;
+    letter-spacing: 2px;
+    animation: glitch 1s infinite;
+}
+
+/* Username Box */
+.username-box input {
+    font-size: 24px;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    background: transparent;
+    border: 2px solid #00FF00;
+    color: #00FF00;
+    margin-bottom: 0px;
+    margin-top: 40px;
+    border-radius: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+/* Pin Box */
+.pin-box {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input Box */
+.input-box input {
+    font-size: 28px;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    background: transparent;
+    border: 2px solid #00FF00;
+    color: #00FF00;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    animation: pulse 1.5s infinite;
+}
+
+.input-box input:focus {
+    outline: none;
+}
+
+/* Buttons */
+button {
+    font-size: 20px;
+    background-color: #333;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    padding: 15px;
+    margin: 10px;
+    width: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effects */
+button:hover {
+    background-color: #00FF00;
+    color: #1a1a1a;
+    transform: scale(1.1);
+}
+
+/* Special Buttons */
+.minus-btn {
+    background-color: #FF0000;
+    color: #fff;
+}
+
+.ok-btn {
+    background-color: #00FF00;
+    color: #1a1a1a;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: flex; /* Ensures it uses flexbox for centering */
+}
+
+/* Modal Content Styles */
+.modal-content {
+    background-color: #000;
+    color: #00FF00;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%; /* Change width for responsiveness */
+    max-width: 300px; /* Limit max width */
+    animation: popUp 0.5s ease-out;
+    outline: 1px solid #00FF00;
+}
+
+/* Error Modal Content */
+.modal-content.error {
+    background-color: #000; /* Red background for error */
+    color: #FF0000; /* White text */
+    outline: 1px solid #FF0000;
+}
+
+/* Close Button */
+.close-btn {
+    font-size: 30px;
+    color: #807f7f;
+    cursor: pointer;
+}
+
+/* Popup animation */
+@keyframes popUp {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Glitch Effect for Heading */
+@keyframes glitch {
+    0% {
+        text-shadow: 1px 0 0 #00FF00, -1px 0 0 #00FF00;
+        transform: translate(2px, 2px);
+    }
+    25% {
+        text-shadow: -1px 0 0 #00FF00, 1px 0 0 #00FF00;
+        transform: translate(-2px, -2px);
+    }
+    50% {
+        text-shadow: 1px 0 0 #00FF00, -1px 0 0 #00FF00;
+        transform: translate(2px, 2px);
+    }
+    75% {
+        text-shadow: -1px 0 0 #00FF00, 1px 0 0 #00FF00;
+        transform: translate(-2px, -2px);
+    }
+    100% {
+        text-shadow: 1px 0 0 #00FF00, -1px 0 0 #00FF00;
+        transform: translate(2px, 2px);
+    }
+}
+
+/* Pulse Effect */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pin-container {
+        padding: 20px;
+    }
+    .pin-heading span {
+        font-size: 24px;
+    }
+    .username-box input {
+        width: 350px;
+        font-size: 20px;
+    }
+    .input-box input {
+        width: 350px;
+        font-size: 22px;
+    }
+    button {
+        font-size: 18px;
+    }
+    
+    /* Modal adjustments for smaller screens */
+    .modal-content {
+        width: 90%; /* Take up 90% of the screen width on smaller devices */
+        max-width: 350px; /* Limit max width */
+    }
+}
+
+@media (max-width: 480px) {
+    .pin-container {
+        padding: 15px;
+    }
+    .pin-heading span {
+        font-size: 22px;
+    }
+    .username-box input {
+        width: 200px;
+        font-size: 18px;
+    }
+    .input-box input {
+        width: 200px;
+        font-size: 20px;
+    }
+    button {
+        font-size: 16px;
+    }
+    
+    /* Modal adjustments for very small screens */
+    .modal-content {
+        width: 95%; /* On very small screens, let the modal take almost all space */
+        max-width: 300px; /* Limit max width */
+    }
+}
