@@ -120,44 +120,30 @@ button:hover {
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    display: flex; /* Ensures it uses flexbox for centering */
 }
 
-/* Modal Content Styles */
 .modal-content {
     background-color: #000;
     color: #00FF00;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    width: 80%; /* Change width for responsiveness */
-    max-width: 300px; /* Limit max width */
+    width: 300px;
     animation: popUp 0.5s ease-out;
     outline: 1px solid #00FF00;
 }
 
-/* Error Modal Content */
 .modal-content.error {
     background-color: #000; /* Red background for error */
     color: #FF0000; /* White text */
     outline: 1px solid #FF0000;
 }
 
-/* Close Button */
+/* Close button */
 .close-btn {
     font-size: 30px;
     color: #807f7f;
     cursor: pointer;
-}
-
-/* Popup animation */
-@keyframes popUp {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
-    }
 }
 
 /* Glitch Effect for Heading */
@@ -197,6 +183,16 @@ button:hover {
     }
 }
 
+/* Popup animation */
+@keyframes popUp {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .pin-container {
@@ -215,12 +211,6 @@ button:hover {
     }
     button {
         font-size: 18px;
-    }
-    
-    /* Modal adjustments for smaller screens */
-    .modal-content {
-        width: 90%; /* Take up 90% of the screen width on smaller devices */
-        max-width: 350px; /* Limit max width */
     }
 }
 
@@ -241,11 +231,5 @@ button:hover {
     }
     button {
         font-size: 16px;
-    }
-    
-    /* Modal adjustments for very small screens */
-    .modal-content {
-        width: 95%; /* On very small screens, let the modal take almost all space */
-        max-width: 300px; /* Limit max width */
     }
 }
